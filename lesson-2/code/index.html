@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>Vue CDN</title>
+</head>
+
+<body>
+    <h1>Events</h1>
+    <div id="vue-app">
+        <button v-on:click="age++">add a year</button>
+        <button v-on:click="age--">substruct a year</button>
+        <button v-on:click="addAge(10)">add ten year</button>
+        <button @dblclick="subAge(10)">substruct ten year</button>
+        <p>{{ age }}</p>
+
+        <!-- mouseRemove event -->
+        <div id="canvas" v-on:mousemove="updateXY">
+            {{ x }},{{ y }}
+        </div>
+
+        <!-- 事件修饰符 -->
+        <p><a v-on:click.prevent="handClick" href="https://www.baidu.com">baidu</a></p>
+
+        <!-- 输入事件   双向数据绑定 input / text / textarea -->
+        <label>姓名：</label>
+        <input type="text" v-model="name">
+        <p>{{ name }}</p>
+        <label>年龄：</label>
+        <input type="text" v-on:keyup.alt.enter="enterAge">
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
