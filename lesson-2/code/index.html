@@ -11,10 +11,10 @@
 <body>
     <h1>Events</h1>
     <div id="vue-app">
-        <button v-on:click="age++">add a year</button>
-        <button v-on:click="age--">substruct a year</button>
+        <button v-on:click="age = age+10">add a year</button>
+        <button v-on:click="age--">substract a year</button>
         <button v-on:click="addAge(10)">add ten year</button>
-        <button @dblclick="subAge(10)">substruct ten year</button>
+        <button @dblclick="subAge(10)">substract ten year</button>
         <p>{{ age }}</p>
 
         <!-- mouseRemove event -->
